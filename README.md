@@ -126,4 +126,19 @@ public class ScoreManager : MonoBehaviour
     }
 }
 ```
+金币旋转
+```C#
+using UnityEngine;
+
+public class CoinRotation : MonoBehaviour
+{
+    public float rotationSpeed = 100f; // 控制旋转速度
+
+    void Update()
+    {
+        // 沿着Y轴（世界坐标系）旋转
+        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f, Space.World);
+    }
+}
+```
 
