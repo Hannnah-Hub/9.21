@@ -52,3 +52,28 @@ public class movement : MonoBehaviour
     }
 }
 ```
+吃掉金币
+```C#
+using UnityEngine;
+
+public class CoinCollector : MonoBehaviour
+{
+    private int score = 0; // 玩家得分
+
+    // 当玩家碰撞到金币时调用
+    void OnTriggerEnter(Collider other)
+    {
+        // 判断碰撞物体是否是金币
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            // 增加玩家的分数
+            score += 1;
+            Debug.Log("得分: " + score);
+
+            // 销毁金币
+            Destroy(other.gameObject);
+        }
+    }
+}
+```
+
